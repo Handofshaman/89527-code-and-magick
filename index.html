@@ -180,9 +180,9 @@
     <p class="setup-similar-label">Петр Петров</p>
   </div>
 </template>
-<script>
-	var fireballSize = 22;				// Размер файрбола.
-	var getFireballSpeed = function(left){               // Функция вычисления скорости файрбола в зависимости от направления стрельбы.
+<script>	
+	var fireballSize = 22;								// Размер файрбола.
+	var getFireballSpeed = function(left){              // Функция вычисления скорости файрбола в зависимости от направления стрельбы.
 		return left ? 5 : 2;			
 	};
 	var wizardSpeed= 3;									// Скорость Пендальфа.
@@ -191,10 +191,14 @@
 		getWizardHeight = 1.337 * wizardWidth;
 		return getWizardHeight;
 	};
-	
-	
-	
-	
+	var getWizardX = function(width){   				// Функция центрирования Пенальфа по ширине поля.					
+		getWizardX = width / 2 ;
+		return getWizardX;	
+	};
+	var getWizardY = function(height) {					// Функция  позиционирования Пендальфа на расстоянии 2/3 от земли.
+		getWizardY =  height * 0.33;
+		return getWizardY ;	
+	};	
 </script>
 <script src="js/game.js"></script>
 
