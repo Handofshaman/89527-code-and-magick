@@ -181,16 +181,15 @@
   </div>
 </template>
 <script>
-	var fireballSize = 22;
-	var getFireballSpeed = function(left){
+	var fireballSize = 22;				// Размер файрбола.
+	var getFireballSpeed = function(left){               // Функция вычисления скорости файрбола в зависимости от направления стрельбы.
 		return left ? 5 : 2;			
 	};
-	var wizardSpeed= 3;
-	var wizardWidth = 70 ;
-	var getWizardHeight = function(wizardWidth){
+	var wizardSpeed= 3;									// Скорость Пендальфа.
+	var wizardWidth = 70 ;								// Ширина Пендальфа.
+	var getWizardHeight = function(wizardWidth){		// Вычисление высоты Пендальфа  в зависимости от ширины.
 		getWizardHeight = 1.337 * wizardWidth;
 		return getWizardHeight;
-	
 	};
 	
 	
