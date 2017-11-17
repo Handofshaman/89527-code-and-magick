@@ -181,24 +181,28 @@
   </div>
 </template>
 <script>	
-	var fireballSize = 22;								// Размер файрбола.
-	var getFireballSpeed = function(left){              // Функция вычисления скорости файрбола в зависимости от направления стрельбы.
+	// Размер файрбола.
+	var fireballSize = 22;		
+	// Функция вычисления скорости файрбола в зависимости от направления стрельбы.	
+	var getFireballSpeed = function(left){              
 		return left ? 5 : 2;			
 	};
-	var wizardSpeed= 3;									// Скорость Пендальфа.
-	var wizardWidth = 70 ;								// Ширина Пендальфа.
-	var getWizardHeight = function(wizardWidth){		// Вычисление высоты Пендальфа  в зависимости от ширины.
-		getWizardHeight = 1.337 * wizardWidth;
-		return getWizardHeight;
+	// Скорость Пендальфа.
+	var wizardSpeed = 3;			
+	// Ширина Пендальфа.	
+	var wizardWidth = 70;	
+	// Вычисление высоты Пендальфа  в зависимости от ширины.	
+	var getWizardHeight = function(wizardWidth){		
+		return 1.337 * wizardWidth;
 	};
-	var getWizardX = function(width){   				// Функция центрирования Пенальфа по ширине поля.					
-		getWizardX = width / 2 ;
-		return getWizardX;	
+	// Функция центрирования Пенальфа по ширине поля.
+	var getWizardX = function(width){   									
+		return (width / 2) - (wizardWidth / 2);
 	};
-	var getWizardY = function(height) {					// Функция  позиционирования Пендальфа на расстоянии 2/3 от земли.
-		getWizardY =  height * 0.33;
-		return getWizardY ;	
-	};	
+	// Функция  позиционирования Пендальфа на расстоянии 2/3 от земли. Начало координат в точке 0.0 в левом верхнем углу.
+	var getWizardY = function(height) {					
+		return height * (1/3) - (getWizardHeight(wizardWidth) / 2);	
+	};		
 </script>
 <script src="js/game.js"></script>
 
