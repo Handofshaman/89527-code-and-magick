@@ -11,7 +11,6 @@
  ctx.fillRect(100, 10, 420, 270);
  ctx.strokeStyle = 'rgb(255,140,0)';
  ctx.strokeRect(100, 10, 420, 270);
-
  // настраиваем шрифт и цвет текста.
  ctx.fillStyle = 'black';
  ctx.font='16px PT Mono';
@@ -56,17 +55,11 @@
         ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
 		}
 		else{
-        ctx.fillStyle = 'rgba(0, 0, 255,' + getRandomAlpha(0,1).toFixed(2) + ')';
-		console.log('Цвет колонны: ' + ctx.fillStyle);
+        ctx.fillStyle = 'rgba(0, 0, 255,' + getRandomAlpha(0,1) + ')';
 		}
 	//отрисовываем гистограммы		
 	ctx.fillRect(coordX,220,40,-times[i] / 100);
 	//сдвигаем следующую гистограмму на 50px.	
 	coordX = coordX + 90;
-   console.log('высота гистограммы ' + times[i] / 100);
-   console.log(names[i], (times[i] / 50) + 80);
-   console.log('Отладочное значение:' + coordYTimes);
-  }
-console.log(names);
-console.log(times);
+   }
  };
