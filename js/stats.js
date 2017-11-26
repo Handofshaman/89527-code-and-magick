@@ -80,4 +80,6 @@ var renderStatistics = function (ctx, names, times) {
     // сдвигаем следующую гистограмму на 50px.
     coordX = coordX + gistogrammShift;
   }
+  // Возвращаем значение для coordX
+  coordX = 140;
 };
