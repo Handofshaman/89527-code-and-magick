@@ -37,7 +37,7 @@
   // Функция рисования столбца гистограммы
   function drawGistogramm(ctx, times, names, yGisto, cnt, xTotal, gWidth, y) {
     // находим координату Y для текста с указанием времени участников.
-    var coordYTimes = ( yGisto - (times[cnt] / 100));
+    var coordYTimes = (yGisto - (times[cnt] / 100));
     // сбрасываем цвет текста на чёрный.
     ctx.fillStyle = 'black';
     // рисуем текст с указанием времени участников.
@@ -76,6 +76,6 @@
       drawGistogramm(ctx, times, names, GISTO_Y, i, coordXTotal, GISTO_WIDTH, COORD_Y);
       // сдвигаем следующую гистограмму на 50px.
       coordXTotal = coordXTotal + GISTOGRAMM_SHIFT;
-    }    
+    }
   };
 }());
