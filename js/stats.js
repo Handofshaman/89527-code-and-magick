@@ -39,15 +39,15 @@
   // Функция нахождения имени игрока с минимальным временем.
   function minValueAndName(pTime, pName) {
     var minVal = pTime[0];
-	var mName = "";
+	  var mName = '';
     for (var i = 0; i <= pTime.length - 1; i++) {
       if (pTime[i] <= minVal) {
         minVal = pTime[i];
         mName = pName[i];
-    }
+      }
     }
     return mName;
-   }  
+  }
   // Создание конечной сцены
   window.renderStatistics = function (ctx, names, times) {
     var COORD_X = 140;
@@ -80,7 +80,7 @@
     for (var i = 0; i <= names.length - 1; i++) {
       drawGistogramm(ctx, times, names, GISTO_Y, i, coordXTotal, GISTO_WIDTH, COORD_Y);
       // сдвигаем следующую гистограмму на 50px.
-    coordXTotal = coordXTotal + GISTOGRAMM_SHIFT;
-   }
-   };
+      coordXTotal = coordXTotal + GISTOGRAMM_SHIFT;
+    }
+  };
 }());
