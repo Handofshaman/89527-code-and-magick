@@ -39,7 +39,7 @@
   // Функция нахождения имени игрока с минимальным временем.
   function minValueAndName(pTime, pName) {
     var minVal = pTime[0];
-	  var mName = '';
+    var mName = '';
     for (var i = 0; i <= pTime.length - 1; i++) {
       if (pTime[i] <= minVal) {
         minVal = pTime[i];
