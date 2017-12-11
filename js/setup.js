@@ -1,5 +1,6 @@
-﻿'use strict';
+'use strict';
 /* eslint unicode-bom: "error" */
+
 (function () {
   // Имена волшебников.
   var WIZARD_NAMES = ['Иван', 'Хуан Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'];
