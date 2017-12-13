@@ -20,12 +20,15 @@
   function getRandomFloat(min, max) {
     return Math.round(Math.random() * (max - min) + min);
   }
-  // Функция создания массива обьектов описывающими четырёх случайных волшебников.
+  // Функция создания массива обьектов описывающих мага.
   function getRandomWizard(array, wname, wsurname, wcoatscolor, weyescolor) {
-    for (var i = 0; i < 4; i++) {
-      var temp = {name: wname[getRandomFloat(0, wname.length - 1)], surname: wsurname[getRandomFloat(0, wsurname.length - 1)], coatColor: wcoatscolor[getRandomFloat(0, wcoatscolor.length - 1)], eyesColor: weyescolor[getRandomFloat(0, weyescolor.length - 1)]};
-      array.push(temp);
-    }
+        var temp = {
+	              name: wname[getRandomFloat(0, wname.length - 1)],
+                  surname: wsurname[getRandomFloat(0, wsurname.length - 1)], 
+				  coatColor: wcoatscolor[getRandomFloat(0, wcoatscolor.length - 1)], 
+				  eyesColor: weyescolor[getRandomFloat(0, weyescolor.length - 1)]
+				  };
+         array.push(temp);
     return array;
   }
   // Функция создания DOM-элемента на основе JS-объекта.
@@ -47,7 +50,9 @@
   // Показываем настройки персонажа.
   document.querySelector('.setup').classList.remove('hidden');
   // Генерируем четырёх случайных магов.
+ for (var i = 0; i < 4; i++) { 
   getRandomWizard(wizards, WIZARD_NAMES, WIZARD_SURNAMES, WIZARD_COATCOLORS, WIZARD_EYECOLORS);
+ } 
   // Вставляем в нижнюю плашку шаблонных магов.
   similarListElement.appendChild(createWizardFragment(wizards));
   // Показываем нижнюю плашку со списком других персонажей.
