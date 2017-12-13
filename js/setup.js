@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 /* eslint unicode-bom: "error" */
 
 (function () {
@@ -27,8 +27,8 @@
       surname: wSurname[getRandomNumber(0, wSurname.length - 1)],
       coatColor: wCoatColors[getRandomNumber(0, wCoatColors.length - 1)],
       eyesColor: wEyesColors[getRandomNumber(0, wEyesColors.length - 1)]
-    };    
-    return templateWizard ;
+    };
+    return templateWizard;
   }
   // Функция создания DOM-элемента на основе JS-объекта.
   function renderWizards(wizard) {
