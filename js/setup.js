@@ -23,10 +23,10 @@
   // Функция создания массива обьектов описывающих мага.
   function getRandomWizard(array, wname, wsurname, wcoatscolor, weyescolor) {
     var temp = {
-	    name: wname[getRandomFloat(0, wname.length - 1)],
+      name: wname[getRandomFloat(0, wname.length - 1)],
       surname: wsurname[getRandomFloat(0, wsurname.length - 1)],
-			coatColor: wcoatscolor[getRandomFloat(0, wcoatscolor.length - 1)],
-			eyesColor: weyescolor[getRandomFloat(0, weyescolor.length - 1)]
+      coatColor: wcoatscolor[getRandomFloat(0, wcoatscolor.length - 1)],
+      eyesColor: weyescolor[getRandomFloat(0, weyescolor.length - 1)]
     };
     array.push(temp);
     return array;
