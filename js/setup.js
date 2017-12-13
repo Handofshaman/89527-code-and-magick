@@ -21,37 +21,37 @@
     return Math.round(Math.random() * (max - min) + min);
   }
   // Функция создания массива обьектов описывающих мага.
-  function getRandomWizard(array, wname, wsurname, wcoatscolor, weyescolor) {
+  function createRandomWizard(array, wName, wSurname, wCoatColor, wEyesColor) {
     var temp = {
-      name: wname[getRandomFloat(0, wname.length - 1)],
-      surname: wsurname[getRandomFloat(0, wsurname.length - 1)],
-      coatColor: wcoatscolor[getRandomFloat(0, wcoatscolor.length - 1)],
-      eyesColor: weyescolor[getRandomFloat(0, weyescolor.length - 1)]
+      name: wName[getRandomFloat(0, wName.length - 1)],
+      surname: wSurname[getRandomFloat(0, wSurname.length - 1)],
+      coatColor: wCoatColor[getRandomFloat(0, wCoatColor.length - 1)],
+      eyesColor: wEyesColor[getRandomFloat(0, wEyesColor.length - 1)]
     };
     array.push(temp);
     return array;
   }
   // Функция создания DOM-элемента на основе JS-объекта.
-  function renderWizards(wiz) {
+  function renderWizards(wizard) {
     var wizardElement = similarWizardTemplate.cloneNode(true);
-    wizardElement.querySelector('.setup-similar-label').textContent = wiz.name + ' ' + wiz.surname;
-    wizardElement.querySelector('.wizard-coat').style.fill = wiz.coatColor;
-    wizardElement.querySelector('.wizard-eyes').style.fill = wiz.eyesColor;
+    wizardElement.querySelector('.setup-similar-label').textContent = wizard.name + ' ' + wizard.surname;
+    wizardElement.querySelector('.wizard-coat').style.fill = wizard.coatColor;
+    wizardElement.querySelector('.wizard-eyes').style.fill = wizard.eyesColor;
     return wizardElement;
   }
   // Функция заполнения блока DOM-элементами на основе массива JS-объектов и записи блока во фрагмент.
-  function createWizardFragment(wiz) {
-    var frgmnt = document.createDocumentFragment();
-    for (var i = 0; i < wiz.length; i++) {
-      frgmnt.appendChild(renderWizards(wiz[i]));
+  function createWizardFragment(wizard) {
+    var fragment = document.createDocumentFragment();
+    for (var i = 0; i < wizard.length; i++) {
+      fragment.appendChild(renderWizards(wizard[i]));
     }
-    return frgmnt;
+    return fragment;
   }
   // Показываем настройки персонажа.
   document.querySelector('.setup').classList.remove('hidden');
   // Генерируем четырёх случайных магов.
   for (var i = 0; i < 4; i++) {
-    getRandomWizard(wizards, WIZARD_NAMES, WIZARD_SURNAMES, WIZARD_COATCOLORS, WIZARD_EYECOLORS);
+    createRandomWizard(wizards, WIZARD_NAMES, WIZARD_SURNAMES, WIZARD_COATCOLORS, WIZARD_EYECOLORS);
   }
   // Вставляем в нижнюю плашку шаблонных магов.
   similarListElement.appendChild(createWizardFragment(wizards));
