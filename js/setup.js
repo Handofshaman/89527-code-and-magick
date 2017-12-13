@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 /* eslint unicode-bom: "error" */
 
 (function () {
@@ -17,19 +17,18 @@
   // Шаблон мага.
   var similarWizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
   // Функция генерации случайного числа.
-  function getRandomFloat(min, max) {
+  function getRandomNumber(min, max) {
     return Math.round(Math.random() * (max - min) + min);
   }
-  // Функция создания массива обьектов описывающих мага.
-  function createRandomWizard(array, wName, wSurname, wCoatColor, wEyesColor) {
-    var temp = {
-      name: wName[getRandomFloat(0, wName.length - 1)],
-      surname: wSurname[getRandomFloat(0, wSurname.length - 1)],
-      coatColor: wCoatColor[getRandomFloat(0, wCoatColor.length - 1)],
-      eyesColor: wEyesColor[getRandomFloat(0, wEyesColor.length - 1)]
-    };
-    array.push(temp);
-    return array;
+  // Функция создания обьекта описывающего мага.
+  function createRandomWizard(wName, wSurname, wCoatColors, wEyesColors) {
+    var templateWizard = {
+      name: wName[getRandomNumber(0, wName.length - 1)],
+      surname: wSurname[getRandomNumber(0, wSurname.length - 1)],
+      coatColor: wCoatColors[getRandomNumber(0, wCoatColors.length - 1)],
+      eyesColor: wEyesColors[getRandomNumber(0, wEyesColors.length - 1)]
+    };    
+    return templateWizard ;
   }
   // Функция создания DOM-элемента на основе JS-объекта.
   function renderWizards(wizard) {
@@ -51,7 +50,7 @@
   document.querySelector('.setup').classList.remove('hidden');
   // Генерируем четырёх случайных магов.
   for (var i = 0; i < 4; i++) {
-    createRandomWizard(wizards, WIZARD_NAMES, WIZARD_SURNAMES, WIZARD_COATCOLORS, WIZARD_EYECOLORS);
+    wizards.push(createRandomWizard(WIZARD_NAMES, WIZARD_SURNAMES, WIZARD_COATCOLORS, WIZARD_EYECOLORS));
   }
   // Вставляем в нижнюю плашку шаблонных магов.
   similarListElement.appendChild(createWizardFragment(wizards));
